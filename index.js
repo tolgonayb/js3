@@ -23,12 +23,15 @@ console.log(min(5, 10))
 
 // 2) countChar
 
-function countChar(string, char) {
-    var counted = 0;
-    for (var i = 0; i < string.length; i++)
-        if (string.charAt(i) == char)
-            counted += 1;
-    return counted;
+function countChar(str, char) {
+    var count = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == char) {
+            count += 1;
+        }
+    }
+        return count;
+
 }
 
 console.log(countChar("Assassin", "s"));
@@ -37,7 +40,7 @@ console.log(countChar("Assassin", "s"));
 
 function Task(name, duration, priority) {
     (this.name = name), (this.duration = duration), (this.priority = priority);
-    return this;
+
 }
 
 var task = new Task("", "", "");
@@ -59,7 +62,9 @@ console.log(duration);
 let priority = tasks.map(tasks => tasks.priority + 1)
 console.log(priority)
 
-let longest_duration = tasks.reduce((a, b) => a.length > b.length ? a : b, '');
+var task_duration = [30, 2, 1, 1, 0.2, 1, 5];
+let longest_duration = task_duration.reduce((prev, curr) => {
+    return Math.max(prev, curr)
+});
+
 console.log(longest_duration)
-
-
